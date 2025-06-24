@@ -4,6 +4,7 @@ import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { Shield, Lock, DollarSign } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import { ChainInformation } from '@/components/chain-information'
 
 function Home() {
   return (
@@ -12,7 +13,7 @@ function Home() {
         <div className='grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8'>
           {/* Main Staking Interface */}
           <div className='lg:col-span-2'>
-            <Card className='bg-[var(--card)]/40 border-[var(--border)]/50 backdrop-blur-2xl rounded-2xl shadow-2xl shadow-[var(--primary)]/30'>
+            <Card className='bg-[var(--card)]/40 border-[var(--border)]/50 backdrop-blur-2xl rounded-2xl shadow-2xl shadow-[var(--primary)]/30 '>
               <CardHeader>
                 <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4'>
                   <div className='space-y-2'>
@@ -145,6 +146,9 @@ function Home() {
                 </p>
               </CardContent>
             </Card>
+          </div>
+          <div>
+            <ChainInformation />
           </div>
         </div>
       </div>
