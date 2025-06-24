@@ -16,6 +16,7 @@ export const wagmiConfig = createConfig({
   },
 })
 
+// Initialize WalletConnect
 createWeb3Modal({
   wagmiConfig,
   projectId,

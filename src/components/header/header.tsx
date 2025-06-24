@@ -2,7 +2,7 @@ import { useSidebar } from '@/components/ui/sidebar'
 /** Components imports */
 import { Menu } from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
-import ConnectWalletButton from '../connect-wallet-button'
+import { ConnectButton, DisconnectButton } from '../wallet-buttons'
 
 /** Assets imports */
 import logo from '@/assets/logo.svg'
@@ -57,7 +57,8 @@ const Header = () => {
           </div>
 
           <div className='flex items-center space-x-4 md:space-x-6'>
-            <ConnectWalletButton />
+            <ConnectButton />
+            <DisconnectButton />
             <button
               onClick={toggleSidebar}
               className='block lg:hidden p-2 rounded-lg hover:bg-[var(--muted)] transition-colors'
