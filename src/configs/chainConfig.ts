@@ -9,7 +9,7 @@ const chains = [mainnet, sepolia] as const
 
 export const wagmiConfig = createConfig({
   chains,
-  connectors: [injected(), walletConnect({ projectId }), metaMask()],
+  connectors: [injected(), walletConnect({ projectId, showQrModal: false }), metaMask()],
   transports: {
     [mainnet.id]: http(),
     [sepolia.id]: http(),
