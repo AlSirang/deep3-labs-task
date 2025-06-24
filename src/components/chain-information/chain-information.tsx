@@ -1,7 +1,14 @@
-import { Activity, Network, TrendingUp } from 'lucide-react'
+import { useAccount, useBlockNumber } from 'wagmi'
+import { Activity, Network } from 'lucide-react'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
+import LoadingProgress from '@/components/loading-progress'
 
 const ChainInformation = () => {
+  const { chain } = useAccount()
+  const { data: blockNumber, isLoading } = useBlockNumber({
+    watch: true,
+  })
+
   return (
     <Card className='bg-gradient-to-br from-[var(--card)]/60 to-[var(--card)]/40 border-[var(--border)]/30 backdrop-blur-2xl rounded-3xl shadow-2xl shadow-[var(--primary)]/20'>
       <CardHeader className='pb-3'>
@@ -25,9 +32,8 @@ const ChainInformation = () => {
             </div>
             <div className='text-right'>
               <span className='text-lg font-black bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] bg-clip-text text-transparent'>
-                Deep3 Labs
+                {chain?.name || 'Unknown'}
               </span>
-              <p className='text-xs text-[var(--secondary)] font-semibold'>Mainnet</p>
             </div>
           </div>
         </div>
@@ -46,22 +52,9 @@ const ChainInformation = () => {
             </div>
             <div className='text-right'>
               <span className='text-lg font-black text-[var(--foreground)] font-mono'>
-                #18,247,392
+                {isLoading ? <LoadingProgress /> : `#${blockNumber}`}
               </span>
-              <div className='flex items-center gap-1 mt-1'>
-                <TrendingUp className='w-3 h-3 text-[var(--secondary)]' />
-                <p className='text-xs text-[var(--secondary)] font-semibold'>+12 blocks</p>
-              </div>
             </div>
-          </div>
-        </div>
-
-        {/* Network Health Indicator */}
-        <div className='flex items-center justify-between pt-2'>
-          <span className='text-xs text-[var(--muted-foreground)] font-medium'>Network Health</span>
-          <div className='flex items-center gap-2'>
-            <div className='w-2 h-2 bg-[var(--secondary)] rounded-full animate-pulse'></div>
-            <span className='text-xs font-semibold text-[var(--secondary)]'>99.9% Uptime</span>
           </div>
         </div>
       </CardContent>
