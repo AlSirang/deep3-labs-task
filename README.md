@@ -1,69 +1,54 @@
-# React + TypeScript + Vite
+# Deep3 Labs DeFi App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a web application built with React, TypeScript, Vite, and a shadcn/ui design system. It features wallet connection, staking, and live blockchain stats such as block number and chain name.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+### 1. **Install Dependencies**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. **Environment Variables**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Copy `.env.example` to `.env` and add your `projectId`. You can get the `projectId` from [WalletConnect](https://cloud.reown.com/sign-in).
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+---
+
+### 3. **Run the Development Server**
+
+```bash
+npm run dev
 ```
+
+The app will be available at [http://localhost:5173](http://localhost:5173) by default.
+
+### 4. **Build for Production**
+
+```bash
+npm run build
+```
+
+---
+
+## Project Configuration
+
+### **Tech Stack**
+
+- **React** + **TypeScript** (SPA)
+- **Vite** (blazing fast dev/build)
+- **Tailwind CSS** (utility-first styling)
+- **shadcn/ui** (premium component library)
+- **WAGMI** (wallet connection, Ethereum hooks)
+- **viem** (ETH utils, contract interaction)
+- **react-hot-toast** (notifications)
+
+## Features
+
+- Connect wallet (MetaMask, WalletConnect, etc.)
+- Convert ETH to WETH with validation and 18-decimal precision
+- Modern, responsive, and accessible UI
+- Clean, modular, and documented codebase
