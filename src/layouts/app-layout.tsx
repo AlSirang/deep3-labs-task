@@ -4,6 +4,8 @@ import { Header } from '@/components/header'
 import { SidebarInset, SidebarProvider } from '@/components/ui/sidebar'
 import { AppSidebar } from '@/components/app-sidebar'
 
+import backgroundLoop from '@/assets/background-loop.svg'
+
 const AppLayout: React.FC<RootProps> = ({ children }) => {
   return (
     <SidebarProvider defaultOpen={false}>
@@ -16,7 +18,7 @@ const AppLayout: React.FC<RootProps> = ({ children }) => {
 
           <div className='absolute m-auto w-full  -top-[5rem] h-screen'>
             <img
-              src={'/src/assets/background-loop.svg'}
+              src={backgroundLoop}
               alt='background-loop'
               className='m-auto w-full object-cover h-full'
             />
