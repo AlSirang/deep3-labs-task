@@ -11,7 +11,13 @@ const BalanceCard = () => {
           Available Balance
         </p>
         <p className='text-2xl md:text-4xl font-black text-[var(--foreground)]'>
-          {wethLoading ? <LoadingProgress /> : wethBalance}
+          {wethLoading ? (
+            <span className='flex items-center justify-center gap-2'>
+              <LoadingProgress />
+            </span>
+          ) : (
+            wethBalance
+          )}
         </p>
         <p className='text-base md:text-lg text-[var(--primary)] font-semibold'>wETH</p>
       </div>
