@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { ChainInformation } from '@/components/chain-information'
 import StakingForm from './staking-form'
 import BalanceCard from './balance-card'
+import { BalanceContextProvider } from '@/contexts/balance-context'
 
 function Home() {
   return (
@@ -32,11 +33,13 @@ function Home() {
               </CardHeader>
 
               <CardContent className='space-y-6 md:space-y-8'>
-                {/* Balance Display */}
-                <BalanceCard />
+                <BalanceContextProvider>
+                  {/* Balance Display */}
+                  <BalanceCard />
 
-                {/* Staking Form */}
-                <StakingForm />
+                  {/* Staking Form */}
+                  <StakingForm />
+                </BalanceContextProvider>
 
                 <div className='bg-gradient-to-r from-[var(--primary)]/5 to-[var(--accent)]/10 rounded-2xl p-4 md:p-6 border border-[var(--primary)]/5'>
                   <div className='flex items-center space-x-3 mb-4'>
