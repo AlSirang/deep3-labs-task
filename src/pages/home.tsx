@@ -32,7 +32,7 @@ function Home() {
 
               <CardContent className='space-y-6 md:space-y-8'>
                 {/* Balance Display */}
-                <div className='bg-gradient-to-r from-[var(--primary)]/20 to-[var(--accent)]/20 rounded-2xl p-6 md:p-8 border border-[var(--primary)]/40'>
+                <div className='bg-gradient-to-r from-[var(--primary)]/5 to-[var(--accent)]/10 rounded-2xl p-6 md:p-8 border border-[var(--primary)]/5'>
                   <div className='text-center space-y-3'>
                     <p className='text-[var(--muted-foreground)] text-sm font-medium uppercase tracking-wider'>
                       Available Balance
@@ -103,7 +103,7 @@ function Home() {
                     </div>
                   </div>
 
-                  <div className='bg-gradient-to-r from-[var(--primary)]/20 to-[var(--accent)]/20 rounded-2xl p-4 md:p-6 border border-[var(--primary)]/40'>
+                  <div className='bg-gradient-to-r from-[var(--primary)]/5 to-[var(--accent)]/10 rounded-2xl p-4 md:p-6 border border-[var(--primary)]/5'>
                     <div className='flex items-center space-x-3 mb-4'>
                       <div className='relative'>
                         <div className='absolute inset-0 bg-[var(--primary)]/50 rounded-xl blur-lg'></div>
@@ -136,7 +136,7 @@ function Home() {
 
                 <Button
                   size='lg'
-                  className='w-full bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] hover:from-[var(--accent)] hover:to-[var(--primary)] text-[var(--primary-foreground)] h-12 md:h-16 text-lg md:text-xl font-black rounded-2xl shadow-2xl shadow-[var(--primary)]/30'>
+                  className='relative group w-full bg-gradient-to-r from-[var(--primary)] to-[var(--accent)] text-[var(--primary-foreground)] h-12 md:h-16 text-lg md:text-xl font-black rounded-2xl shadow-2xl shadow-[var(--primary)]/30'>
                   Stake Tokens
                 </Button>
 
